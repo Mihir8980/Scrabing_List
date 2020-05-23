@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2 style="text-align:center">{{search|title}}<h2>
+    
+    
+    <div class="row">
+        {% for post in final_postings %}    
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="{{post.1}}"><img src="https://www.washingtonpost.com/resizer/uwlkeOwC_3JqSUXeH8ZP81cHx3I=/arc-anglerfish-washpost-prod-washpost/public/HB4AT3D3IMI6TMPTWIZ74WAR54.jpg" alt=""></a>
+                    </div>
+                    <div class="card-content">
+                        <p style="font-size:16px">{{post.0}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{post.1}}" style="font-size:18px">Scrabed from craiglist</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+    </div>
+{% endblock %}
